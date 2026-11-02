@@ -1,0 +1,236 @@
+/* RESET GENERAL: Quita márgenes por defecto y aplica fuente general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo para el fondo completo de la página */
+body {
+    background-color: #F8F9FA;
+    color: #333;
+}
+
+/* Distribución en 2 columnas (Sidebar a la izquierda y Contenido a la derecha) */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =======================================================
+   ESTILOS DE LA BARRA LATERAL (SIDEBAR)
+   ======================================================= */
+.sidebar {
+    width: 270px;                    /* Ancho total del menú lateral */
+    background-color: #81b17c;       /* Tu color personalizado de Figma */
+    border-right: 1px solid #057401;/* Línea Verde divisoria a la derecha */
+    padding: 20px 15px;            /* Relleno interno arriba/abajo y a los lados */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;/* Empuja el footer hacia abajo */
+    height: 100vh;                 /* Ocupa todo el alto de la pantalla */
+    position: sticky;              /* Se queda fijo al hacer scroll */
+    top: 0;
+}
+
+/* Título/Logo del sidebar */
+.sidebar-logo h2 {
+    color: #1F4E3D;                /* Verde institucional */
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+/* Lista contenedora de botones del menú */
+.sidebar-menu {
+    list-style: none;              /* Quita los puntos negros de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada opción/botón individual del menú */
+.sidebar-menu li {
+    padding: 12px 12px;             /* Controla qué tan alto/ancho es el botón */
+    border-radius: 8px;            /* Esquinas redondeadas del botón */
+    margin-bottom: 7px;            /* Espacio pequeño entre botones para que estén juntitos */
+    cursor: pointer;
+}
+
+/* Efecto al pasar el mouse encima o si el botón está seleccionado */
+.sidebar-menu li:hover, .sidebar-menu li.activo {
+    background-color: #50b168;     /* Fondo verde bajito al pasar el ratón */
+}
+
+/* Texto de los enlaces dentro del menú */
+.sidebar-menu a {
+    text-decoration: none;         /* Quita el subrayado azul feo */
+    color: #050505;                /* Color de texto */
+    font-size: 16px;               /* Tamaño de letra ideal */
+    font-weight: 600;              /* Grosor de letra corregido para evitar errores */
+    display: block;
+}
+
+/* Subtítulos pequeños en el menú (ej. "MIS COLECCIONES") */
+.sidebar-section-title {
+    font-size: 12.5px;
+    font-weight: bold;
+    color: #050505;
+    margin: 18px 0 10px 12px;
+    letter-spacing: 0.7px;
+}
+
+/* Cajita con mensaje motivacional en el pie del menú */
+.mini-quote {
+    background-color: #78c28e;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #f8f7f7;
+    border: 1px solid #000000;
+    margin-top: 10px;
+}
+
+.mini-quote p:first-child {
+    margin-bottom: 4px;
+    color: #fafdfc;
+}
+
+/* =======================================================
+   ESTILOS DEL CONTENIDO PRINCIPAL
+   ======================================================= */
+.main-content {
+    flex: 1;                       /* Hace que ocupe todo el espacio restante a la derecha */
+    padding: 20px 40px;            /* Separación interna */
+    overflow-y: auto;              /* Agrega scroll si el contenido es largo */
+}
+
+/* Control de visibilidad de secciones (Lógica para mostrar/ocultar) */
+.seccion {
+    display: none;                 /* Oculta las secciones inactivas */
+}
+
+.seccion.activa {
+    display: block;                /* Muestra únicamente la sección seleccionada */
+}
+
+/* Barra superior con avatar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #666;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Círculo verde del avatar */
+.avatar {
+    background-color: #D1E7DD;
+    color: #0F5132;
+    padding: 6px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Banner verde principal (Hero) */
+.hero-banner {
+    background-color: #1F4E3D;     /* Verde oscuro idéntico a Figma */
+    color: white;
+    padding: 35px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+.hero-text h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.hero-text p {
+    font-size: 13.5px;
+    color: #C2D6CE;
+    margin-bottom: 20px;
+}
+
+/* Caja de búsqueda en el banner */
+.search-box {
+    display: flex;
+    background: white;
+    padding: 5px;
+    border-radius: 50px;
+    max-width: 580px;
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    padding: 8px 18px;
+    outline: none;
+    font-size: 13.5px;
+    border-radius: 50px;
+}
+
+.search-box button {
+    background-color: #E2E8F0;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* Etiquetas recomendadas */
+.hero-tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+}
+
+.hero-tags button {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Estilos de Tarjetas */
+.content-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.left-cards { flex: 2; }
+.right-widgets { flex: 1; }
+
+.card, .widget-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-top: 15px;
+}
+
+.btn-subir {
+    background-color: #1F4E3D;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+}
